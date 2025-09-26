@@ -8,7 +8,7 @@ pipeline {
         }
         stage('Build Docker') {
             steps {
-                sh 'docker build -t 47.83.3.100/library/cicdtest:test .'
+                sh 'docker build -t 47.83.3.100/jenkins/cicdtest:latest .'
             }
         }
         stage('Login Harbor') {
@@ -22,7 +22,7 @@ pipeline {
         }
         stage('Push Image') {
             steps {
-                sh 'docker push 47.83.3.100/library/cicdtest:test'
+                sh 'docker push 47.83.3.100/jenkins/cicdtest:latest'
             }
         }
     }
